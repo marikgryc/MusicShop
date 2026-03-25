@@ -1,10 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    android:background="#333333"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:gravity="center_vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:gravity="center"
+        android:text="Login"
+        android:textColor="#FFFFFF"
+        android:textSize="32sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Username or Email"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/loginUsernameEmail_et"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/input_field_bg"
+        android:inputType="text"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Password"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/loginPassword_et"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/input_field_bg"
+        android:inputType="textPassword"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:textColor="#FFFFFF" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/loginContinue_btn"
+        android:layout_width="230dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/continue_button_bg"
+        android:text="Продовжити"
+        android:textAllCaps="false"
+        android:textColor="#333333"
+        android:textSize="18sp" />
+
+</LinearLayout>
