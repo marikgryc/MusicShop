@@ -46,18 +46,19 @@ class LoginActivity : AppCompatActivity() {
         val isPasswordCorrect = (inputPassword == savedPassword)
 
         if (isUserFound && isPasswordCorrect) {
+            // Вхід успішний: встановлюємо прапорець isAuthorized = true
             val editor = sharedPreferences.edit()
             editor.putBoolean("isAuthorized", true)
             editor.apply()
 
             Toast.makeText(this, "Успішний вхід!", Toast.LENGTH_SHORT).show()
 
-            // TODO: Перехід до Головного меню (MainMenuActivity)
-            // val intent = Intent(this, MainMenuActivity::class.java)
-            // startActivity(intent)
-            // finish()
+            // ПЕРЕХІД ДО ГОЛОВНОГО МЕНЮ
+            val intent = Intent(this, MainMenuActivity::class.java)
+            startActivity(intent)
+            finish() // Закриваємо екран логіну, щоб користувач не міг повернутися назад кнопкою "Back"
         } else {
-
+            // Помилка входу
             Toast.makeText(this, "Невірний логін або пароль", Toast.LENGTH_SHORT).show()
         }
     }
