@@ -48,7 +48,7 @@
             android:textColor="#333333" />
 
         <EditText
-            android:id="@+id/profile_name_et"
+            android:id="@+id/profile_first_name_et"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:hint="Ім'я"
@@ -57,7 +57,16 @@
             android:paddingStart="15dp"
             android:textColor="#FFFFFF"
             android:layout_marginBottom="15dp"/>
-
+        <EditText
+            android:id="@+id/profile_last_name_et"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Прізвище"
+            android:textColorHint="#AAAAAA"
+            android:background="@drawable/input_field_bg"
+            android:paddingStart="15dp"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="15dp"/>
         <EditText
             android:id="@+id/profile_email_et"
             android:layout_width="match_parent"
@@ -81,6 +90,7 @@
             android:focusable="false"
             android:clickable="true"
             android:layout_marginBottom="30dp"/>
+
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_save_profile"

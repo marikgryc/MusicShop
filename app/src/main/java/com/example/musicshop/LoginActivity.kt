@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
@@ -16,11 +17,18 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        setContentView(R.layout.activity_login) // СПОЧАТКУ ЦЕ
 
+        // ТЕПЕР ШУКАЄМО ЕЛЕМЕНТИ
+        val tvGoToRegistration = findViewById<TextView>(R.id.tv_go_to_registration)
         usernameEmailEt = findViewById(R.id.loginUsernameEmail_et)
         passwordEt = findViewById(R.id.loginPassword_et)
         continueBtn = findViewById(R.id.loginContinue_btn)
+
+        tvGoToRegistration.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
 
         continueBtn.setOnClickListener {
             performLogin()
@@ -45,13 +53,8 @@ class LoginActivity : AppCompatActivity() {
         val isPasswordCorrect = (inputPassword == savedPassword)
 
         if (isUserFound && isPasswordCorrect) {
-
-            val editor = sharedPreferences.edit()
-            editor.putBoolean("isAuthorized", true)
-            editor.apply()
-
+            sharedPreferences.edit().putBoolean("isAuthorized", true).apply()
             Toast.makeText(this, "Успішний вхід!", Toast.LENGTH_SHORT).show()
-
 
             val intent = Intent(this, MainMenuActivity::class.java)
             startActivity(intent)

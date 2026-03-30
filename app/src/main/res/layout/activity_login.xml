@@ -53,6 +53,19 @@
         android:paddingEnd="15dp"
         android:textColor="#FFFFFF" />
 
+    <TextView
+        android:id="@+id/tv_go_to_registration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Немає акаунта? Зареєструватися"
+        android:textColor="#DEE4E7"
+        android:textSize="14sp"
+        android:padding="10dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground" />
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/loginContinue_btn"
         android:layout_width="230dp"
