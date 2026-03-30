@@ -9,11 +9,10 @@ import androidx.recyclerview.widget.RecyclerView
 
 class InstrumentAdapter(
     private val instruments: MutableList<Instrument>,
-    private val onItemClicked: (Int) -> Unit, // Функція для редагування (звичайний клік)
-    private val onItemDeleted: (Int) -> Unit  // Функція для видалення (кнопка або довгий клік)
+    private val onItemClicked: (Int) -> Unit,
+    private val onItemDeleted: (Int) -> Unit
 ) : RecyclerView.Adapter<InstrumentAdapter.InstrumentViewHolder>() {
 
-    // Цей клас зберігає посилання на елементи дизайну (TextView, Button) для кожного рядка
     class InstrumentViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val nameTv: TextView = view.findViewById(R.id.item_name_tv)
         val typeTv: TextView = view.findViewById(R.id.item_type_tv)
@@ -29,29 +28,13 @@ class InstrumentAdapter(
     override fun onBindViewHolder(holder: InstrumentViewHolder, position: Int) {
         val instrument = instruments[position]
 
-        // Заповнюємо дані
         holder.nameTv.text = instrument.name
         holder.typeTv.text = "Тип: ${instrument.type}"
-        holder.priceTv.text = "Ціна: $${instrument.price}"
+        holder.priceTv.text = "$${instrument.price}"
 
-        // 1. Редагування при звичайному натисканні на картку
-        holder.itemView.setOnClickListener {
-            onItemClicked(position)
-        }
-
-        // 2. Видалення при натисканні на смітник
-        holder.deleteBtn.setOnClickListener {
-            onItemDeleted(position)
-        }
-
-        // 3. Видалення при довгому натисканні на саму картку
-        holder.itemView.setOnLongClickListener {
-            onItemDeleted(position)
-            true // true означає, що ми обробили цей клік і системі не треба робити щось ще
-        }
+        holder.itemView.setOnClickListener { onItemClicked(position) }
+        holder.deleteBtn.setOnClickListener { onItemDeleted(position) }
     }
 
-    override fun getItemCount(): Int {
-        return instruments.size
-    }
+    override fun getItemCount(): Int = instruments.size
 }
