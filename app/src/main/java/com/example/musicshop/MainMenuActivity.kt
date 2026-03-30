@@ -30,8 +30,8 @@ class MainMenuActivity : AppCompatActivity() {
 
         // 3. Обробка натискань на кнопки меню
         btnCatalog.setOnClickListener {
-            // TODO: Перехід на InstrumentListActivity (Етап 4)
-            Toast.makeText(this, "Тут буде Каталог товарів", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, InstrumentListActivity::class.java)
+            startActivity(intent)
         }
 
         btnCategories.setOnClickListener {
