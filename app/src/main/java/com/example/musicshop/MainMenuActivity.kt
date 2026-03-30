@@ -35,8 +35,8 @@ class MainMenuActivity : AppCompatActivity() {
         }
 
         btnCategories.setOnClickListener {
-            // TODO: Перехід на CategoryDetailActivity (Етап 4)
-            Toast.makeText(this, "Тут будуть Категорії", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, CategoryDetailActivity::class.java)
+            startActivity(intent)
         }
 
         btnProfile.setOnClickListener {

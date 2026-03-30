@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MusicShop">
         <activity
+            android:name=".CategoryDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".InstrumentListActivity"
             android:exported="false" />
         <activity
