@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#333333"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:text="Мій Профіль"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:cardCornerRadius="75dp"
+            app:cardElevation="0dp"
+            android:layout_marginBottom="10dp">
+
+            <ImageView
+                android:id="@+id/profile_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@android:drawable/ic_menu_report_image" />
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/btn_change_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Змінити фото"
+            android:layout_marginBottom="30dp"
+            android:backgroundTint="#DEE4E7"
+            android:textColor="#333333" />
+
+        <EditText
+            android:id="@+id/profile_name_et"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Ім'я"
+            android:textColorHint="#AAAAAA"
+            android:background="@drawable/input_field_bg"
+            android:paddingStart="15dp"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="15dp"/>
+
+        <EditText
+            android:id="@+id/profile_email_et"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Email"
+            android:textColorHint="#AAAAAA"
+            android:background="@drawable/input_field_bg"
+            android:paddingStart="15dp"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="15dp"/>
+
+        <EditText
+            android:id="@+id/profile_dob_et"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Дата народження"
+            android:textColorHint="#AAAAAA"
+            android:background="@drawable/input_field_bg"
+            android:paddingStart="15dp"
+            android:textColor="#FFFFFF"
+            android:focusable="false"
+            android:clickable="true"
+            android:layout_marginBottom="30dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_save_profile"
+            android:layout_width="230dp"
+            android:layout_height="60dp"
+            android:background="@drawable/continue_button_bg"
+            android:text="Зберегти зміни"
+            android:textAllCaps="false"
+            android:textColor="#333333"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+</ScrollView>

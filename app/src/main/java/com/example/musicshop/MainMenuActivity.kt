@@ -40,8 +40,7 @@ class MainMenuActivity : AppCompatActivity() {
         }
 
         btnProfile.setOnClickListener {
-            // TODO: Перехід на ProfileActivity (Етап 5)
-            Toast.makeText(this, "Тут буде Профіль", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, ProfileActivity::class.java))
         }
 
         // 4. Логіка кнопки "Вихід"

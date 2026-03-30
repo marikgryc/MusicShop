@@ -42,10 +42,16 @@ class InstrumentListActivity : AppCompatActivity() {
     }
 
     private fun generateInitialData() {
-        val types = listOf("Гітара", "Синтезатор", "Ударні", "Духові")
-        for (i in 1..10) {
-            instrumentList.add(Instrument(currentId++, "Інструмент $i", 150.0 + (i * 10), types[i % 4]))
-        }
+        instrumentList.add(Instrument(currentId++, "Fender Stratocaster", 1200.0, "Гітара"))
+        instrumentList.add(Instrument(currentId++, "Gibson Les Paul", 2500.0, "Гітара"))
+        instrumentList.add(Instrument(currentId++, "Yamaha P-45", 450.0, "Синтезатор"))
+        instrumentList.add(Instrument(currentId++, "Roland Juno-DS", 800.0, "Синтезатор"))
+        instrumentList.add(Instrument(currentId++, "Tama Imperialstar", 950.0, "Ударні"))
+        instrumentList.add(Instrument(currentId++, "Zildjian K Custom", 400.0, "Ударні"))
+        instrumentList.add(Instrument(currentId++, "Stradivarius Replica", 5000.0, "Струнні"))
+        instrumentList.add(Instrument(currentId++, "Selmer Paris Sax", 3200.0, "Духові"))
+        instrumentList.add(Instrument(currentId++, "Yamaha YTR-2330", 600.0, "Духові"))
+        instrumentList.add(Instrument(currentId++, "Korg Minilogue", 550.0, "Синтезатор"))
     }
 
     private fun deleteInstrument(position: Int) {
