@@ -31,7 +31,7 @@
             android:layout_marginBottom="10dp">
 
             <ImageView
-                android:id="@+id/profile_image"
+                android:id="@+id/profile_image_iv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
@@ -42,6 +42,7 @@
             android:id="@+id/btn_change_photo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:clickable="true"
             android:text="Змінити фото"
             android:layout_marginBottom="30dp"
             android:backgroundTint="#DEE4E7"
