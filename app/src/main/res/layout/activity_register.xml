@@ -171,6 +171,15 @@
             android:textAllCaps="false"
             android:textColor="#333333"
             android:textSize="18sp" />
+        <TextView
+            android:id="@+id/goToLogin_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="30dp"
+            android:text="Вже є акаунт? Увійти"
+            android:textColor="#DEE4E7"
+            android:textSize="16sp" />
 
     </LinearLayout>
 </ScrollView>

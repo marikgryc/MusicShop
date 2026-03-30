@@ -36,7 +36,6 @@ class LoginActivity : AppCompatActivity() {
             return
         }
 
-        // Отримуємо збережені дані
         val sharedPreferences = getSharedPreferences("MusicShopPrefs", Context.MODE_PRIVATE)
         val savedLogin = sharedPreferences.getString("login", "")
         val savedEmail = sharedPreferences.getString("email", "")
@@ -46,19 +45,18 @@ class LoginActivity : AppCompatActivity() {
         val isPasswordCorrect = (inputPassword == savedPassword)
 
         if (isUserFound && isPasswordCorrect) {
-            // Вхід успішний: встановлюємо прапорець isAuthorized = true
+
             val editor = sharedPreferences.edit()
             editor.putBoolean("isAuthorized", true)
             editor.apply()
 
             Toast.makeText(this, "Успішний вхід!", Toast.LENGTH_SHORT).show()
 
-            // ПЕРЕХІД ДО ГОЛОВНОГО МЕНЮ
+
             val intent = Intent(this, MainMenuActivity::class.java)
             startActivity(intent)
-            finish() // Закриваємо екран логіну, щоб користувач не міг повернутися назад кнопкою "Back"
+            finish()
         } else {
-            // Помилка входу
             Toast.makeText(this, "Невірний логін або пароль", Toast.LENGTH_SHORT).show()
         }
     }

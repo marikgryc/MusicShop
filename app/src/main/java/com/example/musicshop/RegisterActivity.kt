@@ -6,6 +6,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import java.util.*
@@ -40,7 +41,6 @@ class RegisterActivity : AppCompatActivity() {
         confirmPasswordEt = findViewById(R.id.confirmPassword_et)
         dateOfBirthEt = findViewById(R.id.dateOfBirth_et)
         continueBtn = findViewById(R.id.continue_btn)
-
         // 1. Логіка для Date of birth (DatePickerDialog)
         // Робимо поле натискабельним, але без ручного введення
         dateOfBirthEt.setOnClickListener {
@@ -48,6 +48,7 @@ class RegisterActivity : AppCompatActivity() {
             val year = calendar.get(Calendar.YEAR)
             val month = calendar.get(Calendar.MONTH)
             val day = calendar.get(Calendar.DAY_OF_MONTH)
+
 
             val datePickerDialog = DatePickerDialog(
                 this,
@@ -64,6 +65,13 @@ class RegisterActivity : AppCompatActivity() {
                 year, month, day
             )
             datePickerDialog.show()
+        }
+        val goToLoginTv: TextView = findViewById(R.id.goToLogin_tv)
+
+        goToLoginTv.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish() // Закриваємо поточний екран
         }
 
         // 2. Логіка кнопки "Продовжити" (Валідація та Збереження)
