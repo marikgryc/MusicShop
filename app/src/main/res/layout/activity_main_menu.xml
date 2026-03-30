@@ -1,62 +1,169 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#333333"
-    android:gravity="center"
     android:orientation="vertical"
-    android:padding="20dp">
+    android:padding="16dp">
 
-    <TextView
-        android:id="@+id/greeting_tv"
-        android:layout_width="wrap_content"
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:text="Привіт, [Ім'я Прізвище]!"
-        android:textColor="#FFFFFF"
-        android:textSize="22sp" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_catalog"
-        android:layout_width="230dp"
-        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
-        android:background="@drawable/continue_button_bg"
-        android:text="Каталог товарів"
-        android:textAllCaps="false"
-        android:textColor="#333333"
-        android:textSize="18sp" />
+        app:cardBackgroundColor="#3B3B3B"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_categories"
-        android:layout_width="230dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/continue_button_bg"
-        android:text="Категорії товарів"
-        android:textAllCaps="false"
-        android:textColor="#333333"
-        android:textSize="18sp" />
+        <TextView
+            android:id="@+id/greeting_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="24dp"
+            android:text="Привіт, Музиканте!"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center" />
+    </androidx.cardview.widget.CardView>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_profile"
-        android:layout_width="230dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/continue_button_bg"
-        android:text="Мій Профіль"
-        android:textAllCaps="false"
-        android:textColor="#333333"
-        android:textSize="18sp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_logout"
-        android:layout_width="230dp"
-        android:layout_height="60dp"
-        android:background="@drawable/continue_button_bg"
-        android:text="Вихід"
-        android:textAllCaps="false"
-        android:textColor="#333333"
-        android:textSize="18sp" />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_catalog"
+            android:layout_width="0dp"
+            android:layout_height="140dp"
+            android:layout_weight="1"
+            android:layout_margin="8dp"
+            app:cardBackgroundColor="#DEE4E7"
+            app:cardCornerRadius="12dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@android:drawable/ic_menu_search"
+                    app:tint="#333333" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Каталог"
+                    android:textColor="#333333"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_categories"
+            android:layout_width="0dp"
+            android:layout_height="140dp"
+            android:layout_weight="1"
+            android:layout_margin="8dp"
+            app:cardBackgroundColor="#DEE4E7"
+            app:cardCornerRadius="12dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@android:drawable/ic_menu_sort_by_size"
+                    app:tint="#333333" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Категорії"
+                    android:textColor="#333333"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_profile"
+            android:layout_width="0dp"
+            android:layout_height="140dp"
+            android:layout_weight="1"
+            android:layout_margin="8dp"
+            app:cardBackgroundColor="#DEE4E7"
+            app:cardCornerRadius="12dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@android:drawable/ic_menu_myplaces"
+                    app:tint="#333333" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Профіль"
+                    android:textColor="#333333"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_logout"
+            android:layout_width="0dp"
+            android:layout_height="140dp"
+            android:layout_weight="1"
+            android:layout_margin="8dp"
+            app:cardBackgroundColor="#FFCDD2"
+            app:cardCornerRadius="12dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@android:drawable/ic_lock_power_off"
+                    app:tint="#D32F2F" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Вихід"
+                    android:textColor="#D32F2F"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
 
 </LinearLayout>
